@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;      /* Very dark navy #0f172a */
+    --foreground: 210 40% 98%;      /* Light gray/white */
+    --card: 0 0% 100%;              /* White cards */
+    --card-foreground: 222 47% 11%; /* Dark text on cards */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 217 91% 60%;         /* Professional blue */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 215 25% 27%;       /* Darker blue/gray */
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 19% 27%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;       /* Red/Orange */
+    --destructive-foreground: 210 40% 98%;
+    --warning: 38 92% 50%;          /* Amber */
+    --warning-foreground: 48 96% 89%;
+    --success: 142 71% 45%;         /* Green */
+    --success-foreground: 144 100% 11%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
+    --radius: 0.5rem;
+
+    /* Theme specific */
+    --sidebar: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --main-bg: 215 28% 17%;         /* Slightly lighter navy */
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(217 91% 50%));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--card)), hsl(210 40% 96%));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(0 0% 100%));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    
+    /* Transitions */
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    --font-sans: 'Inter', sans-serif;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 215 28% 17%;
+    --card-foreground: 210 40% 98%;
+    --popover: 215 28% 17%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 217 19% 27%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 19% 27%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 19% 27%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 19% 27%;
+    --input: 217 19% 27%;
+    --ring: 217 91% 60%;
+    --sidebar: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --main-bg: 215 25% 14%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[hsl(var(--main-bg))] text-foreground;
+    font-family: var(--font-sans, 'Inter'), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom scrollbar for a professional look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--main-bg)); 
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted)); 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--secondary)); 
+}

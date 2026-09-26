@@ -1,0 +1,22 @@
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+frontend/dist-static/
+frontend/.vite/
+frontend/*.local
+
+# Python / backend
+backend/__pycache__/
+backend/.venv/
+backend/.venv_installed
+backend/*.pyc
+
+# Env files (contain per-environment values — commit the .example instead)
+**/.env
+**/.env.production
+!**/.env.example
+
+# OS / editor
+.DS_Store
+.vscode/
+*.log
